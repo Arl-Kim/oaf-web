@@ -18,3 +18,15 @@ html, body{
     margin-left: auto;
     margin-right: auto;
 }
+
+/*Responsive Design*/
+
+
+@media(max-width:545px){
+    .site-below-footer-inner-wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
