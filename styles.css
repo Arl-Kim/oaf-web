@@ -6,6 +6,7 @@ html, body{
 
 .profile{
     width: 250px !important;
+    border: 3px solid #926435;
     border-radius: 50% !important;
     display: block;
     margin-left: auto;
@@ -20,12 +21,6 @@ html, body{
 }
 
 /*Responsive Design*/
-
-@media(min-width:768px){
-    #verse{
-        display: none;
-    }
-}
 
 @media(max-width:545px){
     .site-below-footer-inner-wrap{
