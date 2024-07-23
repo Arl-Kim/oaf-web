@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<style>
+			.intaSendPayButton{
+				background:#527335;
+				color: #cbd5e1;
+				border-radius: 30px;
+				border: 3px double #fff;
+				font-family: 'Poppins';
+				margin-left: 310px;
+				margin-right: auto;
+				font-size: 30px;
+				font-weight: bolder;
+				padding: 70px;
+				box-shadow: 0px 0px 10px 0px #fff;
+				position: relative;
+     			top: 0;
+     			transition: top 500ms ease;
+			}
+			.intaSendPayButton:hover{
+				background: #cbd5e1;
+				color: #527335;
+				border: 3px double #fff;
+				cursor: pointer;
+				top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button class="intaSendPayButton" data-currency="KES" data-email="joe@doe.com" data-first_name="JOE" data-last_name="DOE" data-country="KE">
+				Complete Transaction
+			</button>
+		<script> 
+		new window.IntaSend({
+  // Replace with your Publishable Key
+  publicAPIKey: "ISPubKey_live_b358575d-bd81-4f31-89a1-634f9dfc502b",
+  live: true //set to true when going live
+})
+.on("COMPLETE", (results) => console.log("Do something on success", results))
+.on("FAILED", (results) => console.log("Do something on failure", results))
+.on("IN-PROGRESS", (results) => console.log("Payment in progress status", results))
+		</script>
+		</div>
+	</body>
+</html>
