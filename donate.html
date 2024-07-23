@@ -29,7 +29,7 @@
 	</head>
 	<body>
 		<div class="donation-form">
-            <form action="">
+            <form id="donationForm">
                 <label for="name">Your Name</label><br>
                 <input type="text" id="name" placeholder="enter your name" required><br>
                 <label for="email">Your Email</label><br>
@@ -42,16 +42,44 @@
                     Donate Now
                 </button>
             </form>
-		<script> 
-		new window.IntaSend({
-  // Replace with your Publishable Key
-  publicAPIKey: "ISPubKey_live_b358575d-bd81-4f31-89a1-634f9dfc502b",
-  live: true //set to true when going live
-})
-.on("COMPLETE", (results) => console.log("Do something on success", results))
-.on("FAILED", (results) => console.log("Do something on failure", results))
-.on("IN-PROGRESS", (results) => console.log("Payment in progress status", results))
-		</script>
-		</div>
-	</body>
+		    <script> 
+                const intasend = new window.IntaSend({
+                publicAPIKey: "ISPubKey_live_b358575d-bd81-4f31-89a1-634f9dfc502b",
+                live: false // set to true when going live
+                });
+
+                const donationForm = document.getElementById('donationForm');
+                const amountInput = document.getElementById('amount');
+                const donateButton = document.querySelector('.intaSendPayButton');
+
+                amountInput.addEventListener('input', function() {
+                    const amountValue = amountInput.value;
+                    donateButton.setAttribute('data-amount', amountValue);
+                });
+
+                donationForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    const amount = amountInput.value;
+                    if (amount && amount > 0) {
+                        intasend.pay({
+                            amount: amount,
+                            currency: "KES"
+                        })
+                        .on("COMPLETE", (results) => {
+                            console.log("Payment successful", results);
+                        })
+                        .on("FAILED", (results) => {
+                            console.log("Payment failed", results);
+                        })
+                        .on("IN-PROGRESS", (results) => {
+                            console.log("Payment in progress", results);
+                        });
+                    } else {
+                        console.log("Invalid amount entered.");
+                    }
+                });
+		    </script>
+	    </div>
+    </body>
 </html>
