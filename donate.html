@@ -136,8 +136,12 @@
                         isValid = false;
                     }
 
+                    const phonePattern = /^[1-9]\d{9,14}$/;
                     if (phone === ''){
                         phoneError.textContent = 'You did not key in your phone number!';
+                        isValid = false;
+                    } else if (!phonePattern.test(phone)) {
+                        phoneError.textContent = 'Please enter a valid phone number starting with the country code e.g. 254712345678!';
                         isValid = false;
                     }
 
