@@ -78,7 +78,7 @@
                 <label for="amount">Enter Amount (KES)</label><br>
                 <input type="number" id="amount" min="10" max="150000" step="5"><br>
                 <small id="amountError" class="error-message"></small><br>
-                
+
                 <button type="submit" class="intaSendPayButton" id="intasend_pay" data-amount="" data-currency="KES">
                     Donate Now
                 </button>
@@ -133,6 +133,11 @@
                         isValid = false;
                     } else if (!emailPattern.test(email)) {
                         emailError.textContent = 'Please enter a valid email address!';
+                        isValid = false;
+                    }
+
+                    if (phone === ''){
+                        phoneError.textContent = 'Please enter your phone number!';
                         isValid = false;
                     }
 
