@@ -123,13 +123,13 @@
                     amountError.textContent = '';
 
                     if (name === '') {
-                        nameError.textContent = 'Please enter your name!';
+                        nameError.textContent = 'You did not enter your name!';
                         isValid = false;
                     }
 
                     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
                     if (email === '') {
-                        emailError.textContent = 'Please enter your email address!';
+                        emailError.textContent = 'You forgot to enter your email address!';
                         isValid = false;
                     } else if (!emailPattern.test(email)) {
                         emailError.textContent = 'Please enter a valid email address!';
@@ -137,12 +137,12 @@
                     }
 
                     if (phone === ''){
-                        phoneError.textContent = 'Please enter your phone number!';
+                        phoneError.textContent = 'You did not key in your phone number!';
                         isValid = false;
                     }
 
                     if (amount === '') {
-                        amountError.textContent = 'Please enter your donation amount!';
+                        amountError.textContent = 'Amount cannot be empty, enter at least KES 10!';
                         isValid = false;
                     } else if (amount < 10 || amount > 150000) {
                         amountError.textContent = 'Please enter an amount between KES 10 and KES 150000!';
