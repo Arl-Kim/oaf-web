@@ -122,8 +122,12 @@
                     phoneError.textContent = '';
                     amountError.textContent = '';
 
+                    const namePattern = /^[A-Za-z\s]{3,}$/;
                     if (name === '') {
                         nameError.textContent = 'You did not enter your name!';
+                        isValid = false;
+                    } else if (!namePattern.test(name)) {
+                        nameError.textContent = 'Please enter a valid name!';
                         isValid = false;
                     }
 
