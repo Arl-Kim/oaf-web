@@ -163,7 +163,7 @@
                 donationForm.addEventListener('submit', function(event) {
                     event.preventDefault();
 
-                    if (validateForm() === true) {
+                    if (validateForm()) {
                         const amount = amountInput.value;
 
                         intasend.pay({
