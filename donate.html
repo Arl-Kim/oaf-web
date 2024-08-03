@@ -94,6 +94,11 @@
                 const mobileNumber = document.getElementById('phone');
                 const donateButton = document.querySelector('.intaSendPayButton');
 
+                amountInput.addEventListener('input', function() {
+                    const amountValue = amountInput.value;
+                    donateButton.setAttribute('data-amount', amountValue);
+                });
+
                 mobileNumber.addEventListener('input', function() {
                     const mobileNumberValue = mobileNumber.value;
                     donateButton.setAttribute('data-phone_number', mobileNumberValue);
@@ -159,14 +164,10 @@
                     event.preventDefault();
 
                     if (validateForm()) {
-
-                        amountInput.addEventListener('input', function() {
-                        const amountValue = amountInput.value;
-                        donateButton.setAttribute('data-amount', amountValue);
-                        });
+                        const amount = amountInput.value;
 
                         intasend.pay({
-                            amount: amountValue,
+                            amount: amount,
                             currency: "KES"
                         })
                         .on("COMPLETE", (results) => {
