@@ -20,6 +20,14 @@ html, body{
     margin-right: auto;
 }
 
+
+/*Header & Footer Extra Styles*/
+
+.ast-scroll-top-icon {
+    transition: all 400ms ease-in-out !important;
+}
+
+
 /*Responsive Design*/
 
 @media(max-width:545px){
