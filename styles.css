@@ -1,10 +1,11 @@
-html, body{
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;	
 }
 
-.profile{
+.profile {
     width: 250px !important;
     border: 3px solid #A0522D;
     border-radius: 50% !important;
@@ -14,7 +15,7 @@ html, body{
     width: 50%;
 }
 
-.testimage{
+.testimage {
     width: 250px !important;
     margin-left: auto;
     margin-right: auto;
@@ -30,8 +31,8 @@ html, body{
 
 /*Responsive Design*/
 
-@media(max-width:545px){
-    .site-below-footer-inner-wrap{
+@media(max-width:545px) {
+    .site-below-footer-inner-wrap {
         display: flex;
         flex-direction: column;
         align-items: center !important;
