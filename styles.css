@@ -21,15 +21,29 @@ body {
     margin-right: auto;
 }
 
+/* Custom Styling for AboutUs & Sponsor Page Main Nav. Menu Items */
 
-/*Header & Footer Extra Styles*/
+.page-id-19 .ast-builder-menu-1 .menu-item > .menu-link,
+.page-id-1043 .ast-builder-menu-1 .menu-item > .menu-link {
+    color: #FFF !important;
+    transition: all 400ms ease-in-out;
+}
+
+.page-id-19 .ast-builder-menu-1 .menu-item > .menu-link:hover,
+.page-id-1043 .ast-builder-menu-1 .menu-item > .menu-link:hover,
+.page-id-19 .ast-builder-menu-1 li.current_page_item > .menu-link,
+.page-id-1043 .ast-builder-menu-1 li.current_page_item > .menu-link {
+    color: #669A3F !important;
+}
+
+/* Header & Footer Extra Styles */
 
 .ast-scroll-top-icon {
     transition: all 400ms ease-in-out !important;
 }
 
 
-/*Responsive Design*/
+/* Responsive Design */
 
 @media(max-width:545px) {
     .site-below-footer-inner-wrap {
